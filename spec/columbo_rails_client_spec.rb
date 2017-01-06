@@ -16,11 +16,13 @@ RSpec.describe Columbo do
     it 'resource attributes payload part' do
       dummer = SimplePublishing.new('dummy')
       publisher = Columbo::Resource::Publisher.new(dummer)
-      publisher.instance_variable_set('@payload', OpenStruct.new(resource: {}))
+      publisher.instance_variable_set('@payload', OpenStruct.new(timestamp: '2017-01-06T00:00:00Z', resource: {}))
 
       expect(publisher.send(:resource)[:attributes][:id]).to eq(1)
       expect(publisher.send(:resource)[:attributes][:name]).to eq('dummy')
       expect(publisher.send(:resource)[:attributes][:message]).to eq(nil)
+
+      expect(publisher.send(:build_event, 'dummy')[:action]).to eq('simple_publishing.dummy')
     end
   end
 

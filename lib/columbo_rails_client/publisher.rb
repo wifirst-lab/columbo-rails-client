@@ -29,7 +29,7 @@ module Columbo
           options = { routing_key: "#{@object.class.name.underscore}.#{event_type}" }.merge(options)
         end
 
-        Columbo.client.publish(build_event, options)
+        Columbo.client.publish(build_event(event_type), options)
       end
 
       def resource
@@ -70,7 +70,7 @@ module Columbo
         "#{@object.class.name.underscore}##{@object.id}"
       end
 
-      def build_event
+      def build_event(event_type)
         {
           system: system,
           actor: actor,
