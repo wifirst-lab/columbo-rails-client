@@ -293,7 +293,7 @@ end
 
 ### With Rspec
 
-Mock calls to publish and publsh! methods with :
+Mock calls to publish and publish! methods with :
 
 ```ruby
   allow_any_instance_of(Columbo::Resource::Publisher).to receive(:publish)
