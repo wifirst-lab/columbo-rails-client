@@ -21,7 +21,7 @@ $ bundle
 
 ## Configuration
 
-`columbo-rails-client` uses `columbo-ruby-client` gem for configuration. See the advanced configuration of the latest [here](https://git.wifirst.net/gems/columbo-ruby-client).
+`columbo-rails-client` uses `columbo-ruby-client` gem for configuration. See the advanced configuration of the latest [here](https://github.com/wifirst-lab/columbo-ruby-client).
 
 For the next examples, the Columbo client is initiliazed like this:
 
