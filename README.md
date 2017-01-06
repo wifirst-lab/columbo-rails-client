@@ -293,13 +293,10 @@ end
 
 ### With Rspec
 
-In your rails application spec/rails_helper.rb, you can easily silent
-the publish method with:
+Mock calls to publish and publsh! methods with :
 
 ```ruby
-RSpec.configure do |config|
-  config.before(:suite) do
-    allow_any_instance_of(Columbo::Resource::Publisher).to receive(:publish)
-  end
+  allow_any_instance_of(Columbo::Resource::Publisher).to receive(:publish)
+  allow_any_instance_of(Columbo::Resource::Publisher).to receive(:publish!)
 end
 ```
